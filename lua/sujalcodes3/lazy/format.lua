@@ -1,7 +1,7 @@
 return {
-    { 
-        "m4xshen/autoclose.nvim", 
-        config = function() 
+    {
+        "m4xshen/autoclose.nvim",
+        config = function()
             require("autoclose").setup({
                 keys = {
                     ["$"] = {
@@ -15,5 +15,12 @@ return {
         end
     },
     "kylechui/nvim-surround",
+    {
+        "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {},
+        config = function ()
+            require("ibl").setup()
+        end
+
+    }
 }
 

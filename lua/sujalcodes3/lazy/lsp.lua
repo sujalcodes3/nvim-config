@@ -55,6 +55,7 @@ return {
         'VonHeikemen/lsp-zero.nvim', branch = 'v3.x',
         config = function()
             local lsp_zero = require("lsp-zero")
+            lsp_zero.extend_lspconfig()
             lsp_zero.on_attach(function(client, bufnr)
                 local opts = { buffer = bufnr, remap = false }
                 vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
@@ -68,7 +69,7 @@ return {
                 vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
                 vim.keymap.set("n", "<C-m>", function() vim.lsp.buf.signature_help() end, opts)
             end)
-            lsp_zero.setup_servers({ 'pylsp', 'lua_ls', 'tsserver', 'rust_analyzer', 'gopls', 'html' })
+            lsp_zero.setup_servers({ 'pylsp', 'lua_ls', 'tsserver', 'rust_analyzer', 'gopls', 'html', 'clangd' })
 
             require('mason').setup({})
             require('mason-lspconfig').setup({
