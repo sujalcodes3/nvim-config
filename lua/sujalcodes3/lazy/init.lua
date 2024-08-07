@@ -1,21 +1,23 @@
 return {
-    { 'nvim-lua/plenary.nvim', priority = 1000 },
+    { "nvim-lua/plenary.nvim",       priority = 1000 },
     "christoomey/vim-tmux-navigator",
     {
-        'mbbill/undotree',
-        config = function ()
+        "mbbill/undotree",
+        config = function()
             vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
-        end
+        end,
     },
     {
-        'nvim-lualine/lualine.nvim',
-        config = function ()
-            require('lualine').setup {
+        "nvim-lualine/lualine.nvim",
+        config = function()
+            require("lualine").setup({
+                --[[
                 options = {
                     theme = 'sonokai',
-                },
-            }
-        end
+                },]]
+                --
+            })
+        end,
     },
-    { 'nvim-tree/nvim-web-devicons', opts = true },
+    { "nvim-tree/nvim-web-devicons", opts = true },
 }

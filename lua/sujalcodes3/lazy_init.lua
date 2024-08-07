@@ -11,5 +11,5 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("sujalcodes3.lazy")
-
+require("lazy").setup({ spec = "sujalcodes3.lazy", change_detection = { notify = false }})
+ColorMyPencils()

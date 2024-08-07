@@ -1,21 +1,26 @@
 return {
     {
+        "windwp/nvim-ts-autotag",
+        ft = {
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+            "html",
+        },
+    },
+    {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
         config = function ()
-            --require("nvim-ts-autotag").setup()
+            require("nvim-ts-autotag").setup()
 
             require'nvim-treesitter.configs'.setup {
                 -- A list of parser names, or "all" (the five listed parsers should always be installed)
                 --- ensure_installed = { "c", "cpp", "javascript", "typescript", "go", "lua", "vim", "vimdoc", "query" },
-                ensure_installed = { "c", "javascript", "typescript", "go", "lua", "rust", "vimdoc", "vim", "query" },
+                ensure_installed = { "c", "html", "javascript", "typescript", "tsx", "go", "lua", "rust", "vimdoc", "vim", "query" },
 
                 -- Install parsers synchronously (only applied to `ensure_installed`)
-                -- auto tags for html
-                autotag = {
-                    enable = true,
-                    enable_rename = true,
-                },
                 sync_install = false,
 
                 -- Automatically install missing parsers when entering buffer

@@ -1,8 +1,7 @@
 -- line numbers
 vim.opt.nu = true
 vim.opt.relativenumber = true
-
--- set the cursor to block
+-- set the cursor to blockx/
 vim.opt.guicursor = ""
 -- tab width
 vim.opt.tabstop = 4
@@ -28,9 +27,12 @@ vim.opt.scrolloff = 8
 
 vim.opt.updatetime = 50
 
---vim.opt.colorcolumn = "90"
-
 vim.g.mapleader = " "
 
 vim.opt.autoread = true
 vim.opt.cursorline = true
+
+vim.opt.textwidth = 100
+
+-- for obsidian
+vim.opt.conceallevel = 1
