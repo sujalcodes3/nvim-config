@@ -32,7 +32,7 @@ vim.g.mapleader = " "
 vim.opt.autoread = true
 vim.opt.cursorline = true
 
-vim.opt.textwidth = 100
+vim.opt.textwidth = 120
 
 -- for obsidian
 vim.opt.conceallevel = 1

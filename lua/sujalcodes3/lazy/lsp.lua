@@ -54,6 +54,7 @@ return {
                     --{ name = "luasnip" },
                     { name = "buffer" },
                     { name = "vim-dadbod-completion" },
+                    { name = "path" },
                 }),
                 mapping = {
                     --['<C-e>'] = cmp.mapping.abort(),

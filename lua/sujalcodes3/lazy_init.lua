@@ -12,4 +12,4 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ spec = "sujalcodes3.lazy", change_detection = { notify = false }})
-ColorMyPencils()
+--ColorMyPencils()
