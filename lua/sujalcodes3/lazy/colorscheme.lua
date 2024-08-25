@@ -1,8 +1,8 @@
 function ColorMyPencils(color)
 	color = color or "vague"
 
-	--vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	--vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
 return {
@@ -23,7 +23,7 @@ return {
 					headings = "bold",
 					operators = "italic",
 					strings = "italic",
-					variables = "none",
+					variables = "italic",
 
 					-- keywords
 					keywords = "bold",
@@ -39,25 +39,36 @@ return {
 					builtin_variables = "bold",
 				},
 			})
-			vim.cmd.colorscheme("vague")
+            --vim.cmd.colorscheme("vague")
 		end,
 	},
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
-		config = function() end,
+		config = function()
+        end,
 	},
 	{
 		"rebelot/kanagawa.nvim",
 		name = "kanagawa",
-		config = function() end,
+		config = function()
+            vim.cmd.colorscheme("kanagawa")
+            vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+            vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+        end,
 	},
 	{
 		"nyoom-engineering/oxocarbon.nvim",
 		name = "oxocarbon",
+        config = function ()
+            --vim.cmd.colorscheme("oxocarbon")
+        end
 	},
 	{
 		"aliqyan-21/darkvoid.nvim",
 		name = "darkvoid",
+        config = function ()
+            --vim.cmd.colorscheme("darkvoid")
+        end
 	},
 }

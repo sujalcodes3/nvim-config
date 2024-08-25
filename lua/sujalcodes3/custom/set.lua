@@ -36,3 +36,4 @@ vim.opt.textwidth = 120
 
 -- for obsidian
 vim.opt.conceallevel = 1
+
