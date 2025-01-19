@@ -1,74 +1,100 @@
 function ColorMyPencils(color)
-	color = color or "vague"
+    color = color or "rose-pine"
 
-	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    vim.cmd.colorscheme(color)
+    vim.opt.termguicolors = true
 end
 
 return {
-	{
-		"vague2k/vague.nvim",
-		name = "vague",
-		config = function()
-			require("vague").setup({
-				transparent = true,
-				style = {
-					boolean = "bold",
-					number = "none",
-					float = "none",
-					error = "none",
-					comments = "italic",
-					conditionals = "none",
-					functions = "none",
-					headings = "bold",
-					operators = "italic",
-					strings = "italic",
-					variables = "italic",
-
-					-- keywords
-					keywords = "bold",
-					keyword_return = "bold",
-					keywords_loop = "bold",
-					keywords_label = "bold",
-					keywords_exception = "bold",
-
-					-- builtin
-					builtin_constants = "bold",
-					builtin_functions = "bold",
-					builtin_types = "bold",
-					builtin_variables = "bold",
-				},
-			})
-            --vim.cmd.colorscheme("vague")
-		end,
-	},
-	{
-		"rose-pine/neovim",
-		name = "rose-pine",
-		config = function()
-        end,
-	},
-	{
-		"rebelot/kanagawa.nvim",
-		name = "kanagawa",
-		config = function()
-            vim.cmd.colorscheme("kanagawa")
-            vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-            vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-        end,
-	},
-	{
-		"nyoom-engineering/oxocarbon.nvim",
-		name = "oxocarbon",
+    {
+        "folke/tokyonight.nvim",
         config = function ()
-            --vim.cmd.colorscheme("oxocarbon")
+            require("tokyonight").setup({
+                style = "storm",
+                transparent = true,
+                styles = {
+                    keywords = { bold = true , italic = false }
+                }
+            })
         end
-	},
-	{
-		"aliqyan-21/darkvoid.nvim",
-		name = "darkvoid",
-        config = function ()
-            --vim.cmd.colorscheme("darkvoid")
-        end
-	},
+    },
+    {
+        "rose-pine/neovim",
+        config = function()
+            require("rose-pine").setup({
+                variant = "main", -- auto, main, moon, or dawn
+                dark_variant = "main", -- main, moon, or dawn
+                dim_inactive_windows = false,
+                extend_background_behind_borders = true,
+
+                enable = {
+                    terminal = true,
+                    legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
+                    migrations = true, -- Handle deprecated options automatically
+                },
+
+                styles = {
+                    bold = true,
+                    italic = false,
+                    transparency = true,
+                },
+
+                groups = {
+                    border = "muted",
+                    link = "iris",
+                    panel = "surface",
+
+                    error = "love",
+                    hint = "iris",
+                    info = "foam",
+                    note = "pine",
+                    todo = "rose",
+                    warn = "gold",
+
+                    git_add = "foam",
+                    git_change = "rose",
+                    git_delete = "love",
+                    git_dirty = "rose",
+                    git_ignore = "muted",
+                    git_merge = "iris",
+                    git_rename = "pine",
+                    git_stage = "iris",
+                    git_text = "rose",
+                    git_untracked = "subtle",
+
+                    h1 = "iris",
+                    h2 = "foam",
+                    h3 = "rose",
+                    h4 = "gold",
+                    h5 = "pine",
+                    h6 = "foam",
+                },
+
+                palette = {
+                    -- Override the builtin palette per variant
+                    -- moon = {
+                    --     base = '#18191a',
+                    --     overlay = '#363738',
+                    -- },
+                },
+
+                highlight_groups = {
+                    -- Comment = { fg = "foam" },
+                    -- VertSplit = { fg = "muted", bg = "muted" },
+                },
+
+                before_highlight = function(group, highlight, palette)
+                    -- Disable all undercurls
+                    -- if highlight.undercurl then
+                    --     highlight.undercurl = false
+                    -- end
+                    --
+                    -- Change palette colour
+                    -- if highlight.fg == palette.pine then
+                    --     highlight.fg = palette.foam
+                    -- end
+                end,
+            })
+        end,
+    },
 }

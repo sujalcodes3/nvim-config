@@ -1,23 +1,25 @@
 return {
-    { "nvim-lua/plenary.nvim",       priority = 1000 },
-    "christoomey/vim-tmux-navigator",
+	{ "nvim-lua/plenary.nvim", priority = 1000 },
+	"christoomey/vim-tmux-navigator",
+	{
+		"mbbill/undotree",
+		config = function()
+			vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+		end,
+	},
     {
-        "mbbill/undotree",
+        "echasnovski/mini.nvim",
         config = function()
-            vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
-        end,
+            local statusline = require("mini.statusline");
+            statusline.setup { use_icons = true }
+        end
     },
-    {
-        "nvim-lualine/lualine.nvim",
-        config = function()
-            require("lualine").setup({
-                --[[
-                options = {
-                    theme = 'sonokai',
-                },]]
-                --
-            })
-        end,
-    },
-    { "nvim-tree/nvim-web-devicons", opts = true },
+	{
+		"rbong/vim-flog",
+		lazy = true,
+		cmd = { "Flog", "Flogsplit", "Floggit" },
+		dependencies = {
+			"tpope/vim-fugitive",
+		},
+	},
 }

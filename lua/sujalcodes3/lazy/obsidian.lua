@@ -20,7 +20,7 @@ return {
         workspaces = {
             {
                 name = "personal",
-                path = "/home/sujal/Documents/main_vault",
+                path = "/home/sujalcodes3/Documents/main_vault",
             },
         },
 
